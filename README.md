@@ -24,11 +24,11 @@ The dataset was obtained from the [Kaggle Walmart Sales Forecasting Competition]
 | product_line            | Product line of the product solf        | VARCHAR(100)   |
 | unit_price              | The price of each product               | DECIMAL(10, 2) |
 | quantity                | The amount of the product sold          | INT            |
-| VAT                 | The amount of tax on the purchase       | FLOAT(6, 4)    |
+| VAT                     | The amount of tax on the purchase       | FLOAT(6, 4)    |
 | total                   | The total cost of the purchase          | DECIMAL(10, 2) |
 | date                    | The date on which the purchase was made | DATE           |
 | time                    | The time at which the purchase was made | TIMESTAMP      |
-| payment_method                 | The total amount paid                   | DECIMAL(10, 2) |
+| payment_method          | The total amount paid                   | DECIMAL(10, 2) |
 | cogs                    | Cost Of Goods sold                      | DECIMAL(10, 2) |
 | gross_margin_percentage | Gross margin percentage                 | FLOAT(11, 9)   |
 | gross_income            | Gross Income                            | DECIMAL(10, 2) |
@@ -83,11 +83,11 @@ The dataset was obtained from the [Kaggle Walmart Sales Forecasting Competition]
 4. What is the total revenue by month?
 5. What month had the largest COGS?
 6. What product line had the largest revenue?
-5. What is the city with the largest revenue?
-6. What product line had the largest VAT?
-7. Fetch each product line and add a column to those product line showing "Good", "Bad". Good if its greater than average sales
-8. Which branch sold more products than average product sold?
-9. What is the most common product line by gender?
+7. What is the city with the largest revenue?
+8. What product line had the largest VAT?
+9. Fetch each product line and add a column to those product line showing "Good", "Bad". Good if its greater than average sales
+10. Which branch sold more products than average product sold?
+11. What is the most common product line by gender?
 12. What is the average rating of each product line?
 
 ### Sales
@@ -110,41 +110,40 @@ The dataset was obtained from the [Kaggle Walmart Sales Forecasting Competition]
 9. Which day fo the week has the best avg ratings?
 10. Which day of the week has the best average ratings per branch?
 
-
 ## Revenue And Profit Calculations
 
-$ COGS = unitsPrice * quantity $
+${COGS = unitsPrice * quantity}$
 
-$ VAT = 5\% * COGS $
+${VAT = 5\% * COGS}$
 
-$VAT$ is added to the $COGS$ and this is what is billed to the customer.
+${VAT}$ is added to the ${COGS}$ and this is what is billed to the customer.
 
-$ total(gross_sales) = VAT + COGS $
+${total(grossSales) = VAT + COGS}$
 
-$ grossProfit(grossIncome) = total(gross_sales) - COGS $
+${grossProfit(grossIncome) = total(grossSales) - COGS}$
 
 **Gross Margin** is gross profit expressed in percentage of the total(gross profit/revenue)
 
-$ \text{Gross Margin} = \frac{\text{gross income}}{\text{total revenue}} $
+${\text{Gross Margin} = \frac{\text{gross income}}{\text{total revenue}}}$
 
 <u>**Example with the first row in our DB:**</u>
 
 **Data given:**
 
-- $ \text{Unite Price} = 45.79 $
-- $ \text{Quantity} = 7 $
+- ${\text{Unite Price} = 45.79}$
+- ${\text{Quantity} = 7}$
 
-$ COGS = 45.79 * 7 = 320.53 $
+${COGS = 45.79 * 7 = 320.53}$
 
-$ \text{VAT} = 5\% * COGS\\= 5\%  320.53 = 16.0265 $
+${\text{VAT} = 5\% * COGS\\= 5\% * 320.53 = 16.0265}$
 
-$ total = VAT + COGS\\= 16.0265 + 320.53 = $336.5565$
+${total = VAT + COGS\\= 16.0265 + 320.53 = 336.5565}$
 
-$ \text{Gross Margin Percentage} = \frac{\text{gross income}}{\text{total revenue}}\\=\frac{16.0265}{336.5565} = 0.047619\\\approx 4.7619\% $
+${\text{Gross Margin Percentage} = \frac{\text{gross income}}{\text{total revenue}}\\=\frac{16.0265}{336.5565} = 0.047619\\\approx 4.7619\%}$
 
 ## Code
 
-For the rest of the code, check the [SQL_queries.sql](https://github.com/Princekrampah/WalmartSalesAnalysis/blob/master/SQL_queries.sql) file
+For the rest of the code, check the [SQL_queries.sql](https://github.com/NishivSingh/walmart_sales_analysis/blob/master/SQL_queries.sql) file
 
 ```sql
 -- Create database
